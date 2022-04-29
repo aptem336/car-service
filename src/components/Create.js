@@ -52,7 +52,7 @@ export const Create = () => {
                     label='Гос номер ТС'
                     placeholder='Гос номер ТС'/>
                 <Form.Select
-                    onChange={(e) => setInsuranceType(e.target.value)}
+                    onChange={(e, {value}) => setInsuranceType(value)}
                     fluid
                     label='Вид страхования'
                     placeholder='Вид страхования'
@@ -68,7 +68,7 @@ export const Create = () => {
                     label='Дата окончания действия предыдущего полиса'
                     placeholder='Дата окончания действия предыдущего полиса'/>
                 <Form.Select
-                    onChange={(e) => setInspectionType(e.target.value)}
+                    onChange={(e, {value}) => setInspectionType(value)}
                     fluid
                     label='Запись на техосмотр'
                     placeholder='Запись на техосмотр'

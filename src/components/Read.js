@@ -56,10 +56,10 @@ export const Read = () => {
                                 <Table.Cell>{row.fullName}</Table.Cell>
                                 <Table.Cell>{row.phoneNumber}</Table.Cell>
                                 <Table.Cell>{row.stateNumber}</Table.Cell>
-                                <Table.Cell><Form.Select options={insuranceTypeList}/></Table.Cell>
+                                <Table.Cell><Form.Select value={row.insuranceType} disabled options={insuranceTypeList}/></Table.Cell>
                                 <Table.Cell>{row.insurancePolicyDateStart}</Table.Cell>
                                 <Table.Cell>{row.insurancePolicyDateEnd}</Table.Cell>
-                                <Table.Cell><Form.Select options={inspectionTypeList}/></Table.Cell>
+                                <Table.Cell><Form.Select value={row.inspectionType} disabled options={inspectionTypeList}/></Table.Cell>
                                 <Table.Cell>
                                     <Button onClick={() => document.location = `/update/${row.id}`}>Update</Button>
                                 </Table.Cell>
