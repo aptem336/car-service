@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Create} from './components/Create'
-import {Create as Read} from './components/Create'
+import {Read} from './components/Read'
 import {Create as Update} from './components/Create'
 // @ts-ignore
 import {BrowserRouter as Router, Route} from 'react-router-dom'
