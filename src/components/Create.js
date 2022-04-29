@@ -31,7 +31,7 @@ export const Create = () => {
             insurancePolicyDateStart,
             insurancePolicyDateEnd,
             inspectionType
-        }).then(r => alert(r.status))
+        }).then(() => document.location = 'read')
     }
     return (
         // @ts-ignore

@@ -31,7 +31,7 @@ export const Update = (id) => {
             insurancePolicyDateStart,
             insurancePolicyDateEnd,
             inspectionType
-        }).then(r => alert(r.status))
+        }).then(() => document.location = '/read')
     }
     useEffect(() => {
         axios.get(`https://626bc6d66a86cd64adc168b9.mockapi.io/car-service/${id.id}`)

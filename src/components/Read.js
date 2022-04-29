@@ -36,6 +36,7 @@ export const Read = () => {
 
     return (
         <div>
+            <Button onClick={() => document.location = '/create'}>Create</Button>
             <Table singleLine>
                 <Table.Header>
                     <Table.Row>
@@ -59,6 +60,9 @@ export const Read = () => {
                                 <Table.Cell>{row.insurancePolicyDateStart}</Table.Cell>
                                 <Table.Cell>{row.insurancePolicyDateEnd}</Table.Cell>
                                 <Table.Cell><Form.Select options={inspectionTypeList}/></Table.Cell>
+                                <Table.Cell>
+                                    <Button onClick={() => document.location = `/update/${row.id}`}>Update</Button>
+                                </Table.Cell>
                                 <Table.Cell>
                                     <Button onClick={() => deleteCarService(row.id)}>Delete</Button>
                                 </Table.Cell>
