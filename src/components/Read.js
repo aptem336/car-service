@@ -21,14 +21,14 @@ export const Read = () => {
     }, []);
 
     const getCarService = () => {
-        axios.get(`https://626bc6d66a86cd64adc168b9.mockapi.io/car-service`)
+        axios.get(`http://localhost:8080/api/orders`)
             .then((response) => {
-                setData(response.data);
+                setData(response.data._embedded.orders);
             })
     }
 
     const deleteCarService = (id) => {
-        axios.delete(`https://626bc6d66a86cd64adc168b9.mockapi.io/car-service/${id}`)
+        axios.delete(`http://localhost:8080/api/orders/${id}`)
             .then(() => {
                 getCarService();
             })

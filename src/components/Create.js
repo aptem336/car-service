@@ -23,7 +23,7 @@ export const Create = () => {
     const [insurancePolicyDateEnd, setInsurancePolicyDateEnd] = useState(null);
     const [inspectionType, setInspectionType] = useState(null);
     const postCarService = () => {
-        axios.post(`https://626bc6d66a86cd64adc168b9.mockapi.io/car-service`, {
+        axios.post(`http://localhost:8080/api/orders`, {
             fullName,
             phoneNumber,
             stateNumber,

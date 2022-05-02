@@ -14,7 +14,8 @@ const inspectionTypeList = [
     {key: 'D', text: 'Техосмотр кат D', value: 'inspectionTypeD'},
 ]
 
-export const Update = (id) => {
+export const Update = (idParam) => {
+    const [id, setId] = useState(null);
     const [fullName, setFullName] = useState(null);
     const [phoneNumber, setPhoneNumber] = useState(null);
     const [stateNumber, setStateNumber] = useState(null);
@@ -23,7 +24,8 @@ export const Update = (id) => {
     const [insurancePolicyDateEnd, setInsurancePolicyDateEnd] = useState(null);
     const [inspectionType, setInspectionType] = useState(null);
     const putCarService = () => {
-        axios.put(`https://626bc6d66a86cd64adc168b9.mockapi.io/car-service/${id.id}`, {
+        axios.put(`http://localhost:8080/api/orders/${idParam.id}`, {
+            id,
             fullName,
             phoneNumber,
             stateNumber,
@@ -34,8 +36,9 @@ export const Update = (id) => {
         }).then(() => document.location = '/read')
     }
     useEffect(() => {
-        axios.get(`https://626bc6d66a86cd64adc168b9.mockapi.io/car-service/${id.id}`)
+        axios.get(`http://localhost:8080/api/orders/${idParam.id}`)
             .then((response) => {
+                setId(response.data.id);
                 setFullName(response.data.fullName);
                 setPhoneNumber(response.data.phoneNumber);
                 setStateNumber(response.data.stateNumber);
